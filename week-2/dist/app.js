@@ -297,23 +297,75 @@ class Wallet {
 // console.log(car1.createVehicle())
 // console.log(car2.createVehicle())
 // ACCESSORS - getters and setters. For getting access to private properties
-const fullNameMaxLength = 10;
-class Employee {
-    constructor(fullname) {
-        this._fullName = fullname;
-    }
-    get fullName() {
-        return this._fullName;
-    }
-    set fullName(newName) {
-        if (newName && newName.length > fullNameMaxLength) {
-            throw new Error(`Fullname has a max length of ${fullNameMaxLength}`);
+// const fullNameMaxLength: number = 10
+// class Employee {
+//   private _fullName: string
+//   constructor(fullname: string) {
+//     this._fullName = fullname
+//   }
+//   get fullName() {
+//     return this._fullName
+//   }
+//   set fullName(newName: string) {
+//     if (newName && newName.length > fullNameMaxLength) {
+//       throw new Error(`Fullname has a max length of ${fullNameMaxLength}`)
+//     }
+//     this._fullName = newName
+//   }
+// }
+// const emp1 = new Employee("Petya Naydenova")
+// console.log(emp1.fullName)
+// emp1.fullName = "Barbara"
+// console.log(emp1.fullName)
+// Private, Public, Readonly, static, protected - it is like private, not reachable from the outside. but it is available for classes which are extending it.
+// class Person {
+//   private name: string
+//   protected age: number
+//   constructor(name: string, age: number) {
+//     this.name = name
+//     this.age = age
+//   }
+//   protected getDetails(): void {
+//     console.log(`My name is ${this.name} and I am ${this.age} years old`)
+//   }
+//   public modifyAge(): void {
+//     this.age += 1
+//   }
+// }
+// const petyaPerson = new Person("Petya", 41)
+// // petyaPerson.modifyAge()
+// // petyaPerson.modifyAge()
+// // petyaPerson.modifyAge()
+// // petyaPerson.getDetails()
+// class Employee extends Person {
+//   constructor(name: string, age: number) {
+//     super(name, age)
+//     this.age
+//   }
+//   getEmloyeeDetails() {
+//     return this.getDetails()
+//   }
+// }
+// const emp1 = new Employee("Pesho", 31)
+// emp1.getEmloyeeDetails()
+// !-- Abstract classes are only used for inheritance,
+// Design Patterns
+// Singleton
+class Singleton {
+    constructor() { }
+    static getInstance() {
+        if (this.instance === null) {
+            this.instance = new Singleton();
         }
-        this._fullName = newName;
+        return this.instance;
+    }
+    someMethod() {
+        console.log("this is singleton");
     }
 }
-const emp1 = new Employee("Petya Naydenova");
-console.log(emp1.fullName);
-emp1.fullName = "Barbara";
-console.log(emp1.fullName);
+Singleton.instance = null;
+const instance1 = Singleton.getInstance();
+instance1.someMethod();
+const instance2 = Singleton.getInstance();
+console.log(instance1 === instance2);
 //# sourceMappingURL=app.js.map
