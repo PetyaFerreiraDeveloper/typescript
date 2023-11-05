@@ -254,12 +254,12 @@
 
 // DEPENDENCY INVERSION - high level modules should not depend on low level modules
 
-class Wallet {
-  balance: number
-  constructor(balance: number) {
-    this.balance = balance
-  }
-}
+// class Wallet {
+//   balance: number
+//   constructor(balance: number) {
+//     this.balance = balance
+//   }
+// }
 
 // class DemoUser {
 //   wallet: Wallet
