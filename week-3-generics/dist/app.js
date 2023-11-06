@@ -1,10 +1,11 @@
-const user1 = {
-    firstName: "Pesho",
-    email: "pesho@abv.bg",
-    lastName: "petrov",
-    tellDetails: function () {
-        console.log(`User details: ${this.firstName} ${this.lastName} with email ${this.email}`);
-    },
-};
-user1.tellDetails();
+// INTERFACES DEMO
+function getMammal() {
+    const dog = {
+        legs: 4,
+        furColor: "brown",
+        eat: () => console.log("Dog is eating"),
+    };
+    return dog;
+}
+console.log(getMammal().eat());
 //# sourceMappingURL=app.js.map

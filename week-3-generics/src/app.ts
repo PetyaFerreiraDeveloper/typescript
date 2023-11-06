@@ -61,3 +61,28 @@
 
 // TYPES DEMO
 
+type Mammal = {
+  legs: number
+  furColor: string
+}
+
+type Animal = {
+  eat: () => void
+}
+
+type Dog = Mammal & Animal
+
+interface DogOwner {
+  dogs: Dog[]
+}
+
+function getMammal(): Dog {
+  const dog: Dog = {
+    legs: 4,
+    furColor: "brown",
+    eat: () => console.log("Dog is eating"),
+  }
+  return dog
+}
+
+console.log(getMammal().eat())
