@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log({horsepower:120,make:"VW"})})();

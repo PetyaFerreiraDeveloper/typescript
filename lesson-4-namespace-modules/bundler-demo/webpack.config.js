@@ -1,4 +1,7 @@
+const path = require("path")
+
 module.exports = {
+  devtool: "eval-source-map",
   entry: path.resolve(__dirname, "src/index.ts"),
   module: {
     rules: [
@@ -9,8 +12,18 @@ module.exports = {
       },
     ],
   },
-  output:{
-    filename:'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
+  devServer: {
+    static: path.resolve(__dirname, "dist"),
+    port: 3000,
+    hot: true,
+    open: true,
+    compress: true,
+  },
 }
